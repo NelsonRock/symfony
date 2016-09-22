@@ -78,16 +78,28 @@ class AdvertController extends Controller
         /*return $this->get('templating')->renderResponse(
             'TSPlatformBupndle:Advert:view.html.twig',
             array('id' => $id, 'tag' => $tag)
-            );*/
-        //Este ultimo lo usaremos siempre
-        
-        $advert = array(
-                'title' => 'Se busca desarrollador GO',
-                'id' => $id,
-                'author' => 'Nelson',
-                'content' => 'Proponemos beneficios',
-                'date' => new \Datetime()
             );
+        */
+        //Este ultimo lo usaremos siempre
+        /* 
+        * Utilizando Doctrine para recuperar repositorio
+        */
+
+        $repository = $this->getDoctrine()
+        ->getManager()
+        ->getRepository('TSPlatformBundle:Advert');
+        $advert = $repository->find($id);
+
+        if (null === $advert) {
+            throw new NotFoundHttpException('El anuncio de id '.$id.' no existe');
+        }
+        // $advert = array(
+        //         'title' => 'Se busca desarrollador GO',
+        //         'id' => $id,
+        //         'author' => 'Nelson',
+        //         'content' => 'Proponemos beneficios',
+        //         'date' => new \Datetime()
+        //     );
         return $this->render('TSPlatformBundle:Advert:view.html.twig', array('advert' => $advert));
         
     }
