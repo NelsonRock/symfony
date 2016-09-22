@@ -1,0 +1,4 @@
+services:
+#    ts_core.example:
+#        class: TS\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

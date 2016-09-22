@@ -1,0 +1,6 @@
+ts_core_homepage:
+    path:     /
+    defaults: { _controller: TSCoreBundle:Core:index }
+ts_core_contact: 
+    path: /contact
+    defaults: { _controller: TSCoreBundle:Core:contact }

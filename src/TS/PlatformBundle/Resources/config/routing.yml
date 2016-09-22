@@ -1,0 +1,45 @@
+
+ts_platform_home:
+    path:   /{page}
+    defaults: 
+        _controller: TSPlatformBundle:Advert:index
+        page:   1
+    requirements:
+        page:   \d*
+    
+ts_platform_view:
+    path:   /advert/{id}
+    defaults: 
+        _controller: TSPlatformBundle:Advert:view   
+        page:   1
+    requirements:
+        id: \d+
+    
+ts_platform_add:
+    path:   /add
+    defaults: 
+        _controller: TSPlatformBundle:Advert:add
+    
+ts_platform_edit:
+    path:   /edit
+    defaults:
+        _controller: TSPlatformBundle:Advert:add
+    requirements:
+        id: \d+
+        
+ts_platform_delete:
+    path:   /delete/{id}
+    defaults: 
+        _controller: TSPlatformBundle:Advert:delete
+    requirements:
+        id: \d+
+
+ts_platform_view_slug:
+    path:   /{year}/{slug}.{_format}
+    defaults: 
+        _controller: TSPlatformBundle:Advert:viewSlug
+        format: html
+    requirements:
+        year:   \d{4}
+        format: html|xml
+    

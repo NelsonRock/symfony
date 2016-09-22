@@ -1,0 +1,7 @@
+ts_core:
+    resource: "@TSCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ts_platform:
+    resource: "@TSPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform

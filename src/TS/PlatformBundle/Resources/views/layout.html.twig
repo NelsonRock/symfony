@@ -1,0 +1,15 @@
+{% extends "TSCoreBundle::layout.html.twig" %}
+{% block title %}
+    {{ parent() }} - Anuncios
+{% endblock %}
+
+{% block body %}
+    <h1>Anuncios</h1>
+    <hr>
+
+    {# Nuevo bloque para que las vistas del bundle la rellenen #}
+    {% block tsplatform_body %}
+    {% endblock %}
+
+
+{% endblock %}

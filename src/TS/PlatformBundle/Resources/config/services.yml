@@ -1,0 +1,4 @@
+services:
+#    ts_platform.example:
+#        class: TS\PlatformBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

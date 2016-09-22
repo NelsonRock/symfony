@@ -1,0 +1,23 @@
+{% extends "TSPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Actual - {{ parent() }}
+
+    {% block tsplatform_body %}
+        <h2>Lista de anuncios</h2>
+        <ul>
+         {% for advert in listAdverts %}
+         <li>
+            <a href="{{ path('ts_platform_view', {'id': advert.id }) }}">
+                {{advert.title}}
+            </a>
+            por {{ advert.author }},
+            el {{ advert.date|date('d-m-Y') }}
+        </li>
+        {% else %}
+        <li>No hay todavia anuncios</li>
+        {% endfor %}     
+        </ul>
+    {% endblock %}
+
+{% endblock %}

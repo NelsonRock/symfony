@@ -1,0 +1,25 @@
+{% extends "TSPlatformBundle::layout.html.twig" %}
+{% block title %}
+ Lecture de un anuncio - {{ parent() }}
+
+{% endblock %}
+
+{% block tsplatform_body %}
+    <h2>{{ advert.title }}</h2>
+    <i>Por {{ advert.author}} , el {{ advert.date|date('d/m/Y') }}</i>
+    <div class="well">{{ advert.content }}</div>
+    <p>
+        <a href="{{ path('ts_platform_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Regrese a la liste
+        </a>
+        <a href="{{ path('ts_platform_edit', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-edit"></i></i>
+            Modificar el anuncio
+        </a>
+        <a href="{{ path('ts_platform_delete', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-remove"></i>
+            Eliminar el anuncio
+        </a>
+    </p>
+{% endblock %}
